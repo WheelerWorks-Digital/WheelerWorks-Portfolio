@@ -1,22 +1,111 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Projects</title>
-    <link rel="stylesheet" href="/css/main.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects — Harrington Wheeler-Timmons</title>
+  <link rel="stylesheet" href="css/main.css">
 </head>
 
-    <body>
-        <nav class="navigation">    
-            <ul>
-                
-                <li><a href="About Me.html">About Me</a></li>
-                <li><a href="Resume.html">Resume</a></li>
-                <li><a href="Main.html">Main</a></li>
-            </ul>
-        </nav>
-        <h1>Projects</h1>
-        
-        <p>More to come soon...</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam dolore commodi itaque est ab voluptate, pariatur iusto quos quo delectus id ullam omnis in! Sunt vel officia veniam nobis adipisci.</p>
-    </body>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navigation">
+    <a href="Main.html" class="nav-logo">HWT_</a>
+    <ul>
+      <li><a href="About_Me.html">About</a></li>
+      <li><a href="Projects.html" class="active">Projects</a></li>
+      <li><a href="Resume.html">Resume</a></li>
+      <li><a href="contact me.html">Contact Me</a></li>
+    </ul>
+  </nav>
+
+  <!-- Page Content -->
+  <main class="page">
+
+    <div class="section-header">
+      <span class="label">// Work</span>
+      <h1>Projects</h1>
+      <div class="divider"></div>
+    </div>
+
+    <p class="projects-intro">
+      A collection of things I've built — from personal tools to coursework projects.
+      I build to learn, and I learn by building.
+    </p>
+
+    <div class="projects-grid">
+
+      <!-- PROJECT 1 — Real project, fill in details -->
+      <a href="#" class="project-card">
+        <span class="project-num">01</span>
+        <div class="project-title">Organization App</div>
+        <p class="project-desc">
+          A personal productivity app built to stay on top of coursework and daily tasks.
+          Designed and developed independently to practice full-stack skills.
+        </p>
+        <div class="project-stack">
+          <span class="stack-tag">Python</span>
+          <span class="stack-tag">JavaScript</span>
+          <span class="stack-tag">CSS</span>
+        </div>
+        <span class="project-arrow">→</span>
+      </a>
+
+      <!-- PROJECT 2 — This portfolio site -->
+      <a href="Main.html" class="project-card">
+        <span class="project-num">02</span>
+        <div class="project-title">Portfolio Website</div>
+        <p class="project-desc">
+          This site — a personal portfolio built from scratch using HTML, CSS, and vanilla JavaScript
+          as part of my Computing Informatics coursework at Drexel.
+        </p>
+        <div class="project-stack">
+          <span class="stack-tag">HTML</span>
+          <span class="stack-tag">CSS</span>
+          <span class="stack-tag">JavaScript</span>
+        </div>
+        <span class="project-arrow">→</span>
+      </a>
+
+      <!-- PLACEHOLDER — More coming soon -->
+      <div class="project-card coming-soon">
+        <span class="project-num">03</span>
+        <div class="project-title">Coming Soon</div>
+        <p class="project-desc">
+          New project in progress. Check back soon.
+        </p>
+        <div class="project-stack">
+          <span class="stack-tag">TBD</span>
+        </div>
+      </div>
+
+      <div class="project-card coming-soon">
+        <span class="project-num">04</span>
+        <div class="project-title">Coming Soon</div>
+        <p class="project-desc">
+          New project in progress. Check back soon.
+        </p>
+        <div class="project-stack">
+          <span class="stack-tag">TBD</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Call to action -->
+    <div style="padding-top: 16px; border-top: 1px solid var(--border);">
+      <p style="color:var(--text-faint); font-size:13px; margin-bottom:20px;">
+        Interested in working together or have a question?
+      </p>
+      <a href="Resume.html" class="btn btn-ghost">View Resume →</a>
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <p style="color:var(--text-faint); font-size:12px;">© 2025 Harrington Wheeler-Timmons</p>
+  </footer>
+
+</body>
+</html>

@@ -1,18 +1,56 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Resume</title>
-    <link rel="stylesheet" href="css/main.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resume — Harrington Wheeler-Timmons</title>
+  <link rel="stylesheet" href="css/main.css">
 </head>
-    <body>
-        <nav class="navigation">
-            <ul>
-                
-                <li><a href="About Me.html">About Me</a></li>
-                <li><a href="Projects.html">Projects</a></li>
-                <li><a href="Main.html">Main</a></li>
-            </ul>
-        </nav>
-        <iframe class="pdf" src="Harrington_WheelerTimmons_Resume (1).pdf"  width="800" height="500"></iframe>
-    </body>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navigation">
+    <a href="Main.html" class="nav-logo">HWT_</a>
+    <ul>
+      <li><a href="About_Me.html">About</a></li>
+      <li><a href="Projects.html">Projects</a></li>
+      <li><a href="Resume.html" class="active">Resume</a></li>
+      <li><a href="contact me.html">Contact Me</a></li>
+    </ul>
+  </nav>
+
+  <main class="page">
+
+    <div class="section-header">
+      <span class="label">// Experience</span>
+      <h1>Resume</h1>
+      <div class="divider"></div>
+    </div>
+
+    <div class="resume-container">
+
+      <div class="resume-actions">
+        <a href="Harrington_WheelerTimmons_Resume (1).pdf" download class="btn btn-primary">
+          ↓ Download PDF
+        </a>
+        <a href="About_Me.html" class="btn btn-ghost">About Me →</a>
+      </div>
+
+      <div class="pdf-wrapper">
+        <iframe
+          src="Harrington_WheelerTimmons_Resume (1).pdf"
+          title="Harrington Wheeler-Timmons Resume">
+        </iframe>
+      </div>
+
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <p style="color:var(--text-faint); font-size:12px;">© 2025 Harrington Wheeler-Timmons</p>
+  </footer>
+
+</body>
+</html>
