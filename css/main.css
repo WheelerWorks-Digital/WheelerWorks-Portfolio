@@ -450,30 +450,7 @@ body::before {
   transform: translateX(0);
 }
 
-/* ── Resume Page ── */
-.resume-container {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-
-.pdf-wrapper {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  overflow: hidden;
-  padding: 4px;
-}
-
-.pdf-wrapper iframe {
-  width: 100%;
-  aspect-ratio: 4 / 5;
-  border: none;
-  display: block;
-  border-radius: 6px;
-  min-height: 600px;
-}
-
+/* ── Button row (About, Projects) ── */
 .resume-actions {
   display: flex;
   gap: 12px;
