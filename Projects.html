@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Projects — Harrington Wheeler-Timmons</title>
+  <title>Work — WheelerWorks Digital</title>
+  <meta name="description" content="Projects by Harrington Wheeler-Timmons of WheelerWorks Digital: Trade Journal, Cobble, and an AI Command Center." />
   <link rel="stylesheet" href="css/main.css">
 </head>
 
@@ -11,12 +12,12 @@
 
   <!-- Navigation -->
   <nav class="navigation">
-    <a href="Main.html" class="nav-logo">HWT_</a>
+    <a href="Main.html" class="nav-logo">Wheeler<span>Works</span>_</a>
     <ul>
+      <li><a href="Projects.html" class="active">Work</a></li>
+      <li><a href="Pricing.html">Pricing</a></li>
       <li><a href="About_Me.html">About</a></li>
-      <li><a href="Projects.html" class="active">Projects</a></li>
-      <li><a href="Resume.html">Resume</a></li>
-      <li><a href="contact me.html">Contact Me</a></li>
+      <li><a href="Contact.html">Contact</a></li>
     </ul>
   </nav>
 
@@ -30,64 +31,62 @@
     </div>
 
     <p class="projects-intro">
-      A collection of things I've built — from personal tools to coursework projects.
+      Things I've designed and built, from web apps to mobile apps to automation.
       I build to learn, and I learn by building.
     </p>
 
     <div class="projects-grid">
 
-      <!-- PROJECT 1 — Real project, fill in details -->
-      <a href="#" class="project-card">
+      <!-- PROJECT 1 — Trade Journal -->
+      <a href="https://github.com/WheelerWorks-Digital/Trade-Journal" target="_blank" rel="noopener" class="project-card">
         <span class="project-num">01</span>
-        <div class="project-title">Organization App</div>
+        <div class="project-title">Trade Journal</div>
         <p class="project-desc">
-          A personal productivity app built to stay on top of coursework and daily tasks.
-          Designed and developed independently to practice full-stack skills.
+          A browser-based trading journal. Log trades, see profit and loss and R-multiples calculated
+          automatically, and track win rate and other stats on a live dashboard. Data is saved in the
+          browser, so it works with no backend.
         </p>
         <div class="project-stack">
-          <span class="stack-tag">Python</span>
           <span class="stack-tag">JavaScript</span>
-          <span class="stack-tag">CSS</span>
-        </div>
-        <span class="project-arrow">→</span>
-      </a>
-
-      <!-- PROJECT 2 — This portfolio site -->
-      <a href="Main.html" class="project-card">
-        <span class="project-num">02</span>
-        <div class="project-title">Portfolio Website</div>
-        <p class="project-desc">
-          This site — a personal portfolio built from scratch using HTML, CSS, and vanilla JavaScript
-          as part of my Computing Informatics coursework at Drexel.
-        </p>
-        <div class="project-stack">
           <span class="stack-tag">HTML</span>
           <span class="stack-tag">CSS</span>
-          <span class="stack-tag">JavaScript</span>
+          <span class="stack-tag">localStorage</span>
         </div>
         <span class="project-arrow">→</span>
       </a>
 
-      <!-- PLACEHOLDER — More coming soon -->
-      <div class="project-card coming-soon">
-        <span class="project-num">03</span>
-        <div class="project-title">Coming Soon</div>
+      <!-- PROJECT 2 — Cobble -->
+      <a href="https://github.com/WheelerWorks-Digital/Project-Cobble" target="_blank" rel="noopener" class="project-card">
+        <span class="project-num">02</span>
+        <div class="project-title">Cobble</div>
         <p class="project-desc">
-          New project in progress. Check back soon.
+          A civic engagement mobile app built at Drexel Hackathon 2026. Residents report neighborhood
+          issues with photos and GPS, upvote them, and earn rewards through sidequests. Local
+          organizations get a dashboard to track and respond.
         </p>
         <div class="project-stack">
-          <span class="stack-tag">TBD</span>
+          <span class="stack-tag">React Native</span>
+          <span class="stack-tag">Expo</span>
+          <span class="stack-tag">TypeScript</span>
+          <span class="stack-tag">Supabase</span>
         </div>
-      </div>
+        <span class="project-arrow">→</span>
+      </a>
 
-      <div class="project-card coming-soon">
-        <span class="project-num">04</span>
-        <div class="project-title">Coming Soon</div>
+      <!-- PROJECT 3 — AI Command Center (private, so no link) -->
+      <div class="project-card">
+        <span class="project-num">03</span>
+        <div class="project-title">AI Command Center</div>
         <p class="project-desc">
-          New project in progress. Check back soon.
+          A personal automation system built on Claude. AI agents triage email, review the calendar,
+          and write a daily plan, and a live dashboard tracks progress. It also finds and scores
+          local business leads for WheelerWorks.
         </p>
         <div class="project-stack">
-          <span class="stack-tag">TBD</span>
+          <span class="stack-tag">AI Agents</span>
+          <span class="stack-tag">Python</span>
+          <span class="stack-tag">Automation</span>
+          <span class="stack-tag">Gmail + Calendar APIs</span>
         </div>
       </div>
 
@@ -96,15 +95,18 @@
     <!-- Call to action -->
     <div style="padding-top: 16px; border-top: 1px solid var(--border);">
       <p style="color:var(--text-faint); font-size:13px; margin-bottom:20px;">
-        Interested in working together or have a question?
+        Want something like this for your business?
       </p>
-      <a href="Resume.html" class="btn btn-ghost">View Resume →</a>
+      <div class="resume-actions">
+        <a href="Pricing.html" class="btn btn-primary">See Pricing →</a>
+        <a href="Contact.html" class="btn btn-ghost">Start a Project</a>
+      </div>
     </div>
 
   </main>
 
   <footer class="footer">
-    <p style="color:var(--text-faint); font-size:12px;">© 2025 Harrington Wheeler-Timmons</p>
+    <p style="color:var(--text-faint); font-size:12px; text-align:center;">© 2026 WheelerWorks Digital · Central Jersey · Built by Harrington Wheeler-Timmons</p>
   </footer>
 
 </body>

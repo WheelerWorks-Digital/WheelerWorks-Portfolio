@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — WheelerWorks Digital</title>
+  <meta name="description" content="Start a website project with WheelerWorks Digital, serving all of Central Jersey." />
+  <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navigation">
+    <a href="Main.html" class="nav-logo">Wheeler<span>Works</span>_</a>
+    <ul>
+      <li><a href="Projects.html">Work</a></li>
+      <li><a href="Pricing.html">Pricing</a></li>
+      <li><a href="About_Me.html">About</a></li>
+      <li><a href="Contact.html" class="active">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main class="page" style="max-width:1100px;">
+
+    <div class="section-header">
+      <span class="label">// Start a project</span>
+      <h1>Let's build your site.</h1>
+      <div class="divider"></div>
+    </div>
+
+    <div class="contact-layout">
+
+      <div class="info-card" id="contact-card">
+        <!-- FORMSPREE: replace YOUR_FORM_ID with the ID from formspree.io (e.g. https://formspree.io/f/xyzabcd) -->
+        <form class="contact-form" id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+          <input type="hidden" name="_subject" value="New WheelerWorks lead">
+          <input type="text" name="_gotcha" class="gotcha" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+          <div>
+            <label for="name">Your name</label>
+            <input id="name" name="name" autocomplete="name" required>
+          </div>
+          <div>
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" required>
+          </div>
+          <div>
+            <label for="business">Business name</label>
+            <input id="business" name="business" autocomplete="organization">
+          </div>
+          <div>
+            <label for="business_type">Type of business</label>
+            <select id="business_type" name="business_type">
+              <option>Barbershop</option>
+              <option>Hair salon</option>
+              <option>Restaurant</option>
+              <option>Contractor</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div>
+            <label for="package">Package you're interested in</label>
+            <select id="package" name="package">
+              <option value="Not sure yet">Not sure yet</option>
+              <option value="Starter ($350)">Starter · $350</option>
+              <option value="Business ($750)">Business · $750</option>
+              <option value="Custom (from $1,200)">Custom · from $1,200</option>
+            </select>
+          </div>
+          <div>
+            <label for="phone">Phone <span class="opt">(optional)</span></label>
+            <input id="phone" name="phone" type="tel" autocomplete="tel">
+          </div>
+          <div class="full">
+            <label for="message">What do you need?</label>
+            <textarea id="message" name="message" placeholder="e.g. We need a site where people can see our barbers, prices, and book online." required></textarea>
+          </div>
+          <div class="full form-footer">
+            <span class="fine">Your info only goes to me. No spam, no mailing lists.</span>
+            <button class="btn btn-primary" type="submit">Send Message →</button>
+          </div>
+          <p class="full form-status" id="form-status" role="alert"></p>
+        </form>
+
+        <div class="form-success" role="status">
+          <div class="check">✓</div>
+          <h2>Thanks, <span id="who">there</span>!</h2>
+          <p>Your message is on its way. I'll get back to you within one business day.</p>
+        </div>
+      </div>
+
+      <aside>
+        <div class="info-card skills-block">
+          <h2>What happens next</h2>
+          <div class="contact-steps skills-list">
+            <div class="skill-item">I reply within one business day</div>
+            <div class="skill-item">Free 15-minute call about your business</div>
+            <div class="skill-item">You get a fixed quote, no surprises</div>
+            <div class="skill-item">Your site goes live in 1–2 weeks</div>
+          </div>
+        </div>
+        <div style="margin-top:24px;">
+          <a href="Pricing.html" class="btn btn-ghost">Compare Packages →</a>
+        </div>
+      </aside>
+
+    </div>
+
+  </main>
+
+  <script>
+    // Pre-select the package when coming from the pricing page (Contact.html?package=business)
+    (function () {
+      var pick = new URLSearchParams(location.search).get('package');
+      var map = { starter: 'Starter ($350)', business: 'Business ($750)', custom: 'Custom (from $1,200)' };
+      if (pick && map[pick]) document.getElementById('package').value = map[pick];
+    })();
+
+    // Send through Formspree without leaving the page, then show the thank-you message.
+    // Without JavaScript the form still posts normally to Formspree.
+    (function () {
+      var form = document.getElementById('contact-form');
+      var status = document.getElementById('form-status');
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        status.className = 'full form-status';
+        if (form.action.indexOf('YOUR_FORM_ID') !== -1) {
+          status.className = 'full form-status error';
+          status.textContent = "The contact form isn't connected yet. Please check back soon.";
+          return;
+        }
+        status.textContent = 'Sending…';
+        fetch(form.action, { method: 'POST', body: new FormData(form), headers: { 'Accept': 'application/json' } })
+          .then(function (r) {
+            if (!r.ok) throw new Error('Formspree returned ' + r.status);
+            status.textContent = '';
+            document.getElementById('who').textContent = (form.elements.name.value.trim() || 'there').split(' ')[0];
+            document.getElementById('contact-card').classList.add('sent');
+          })
+          .catch(function () {
+            status.className = 'full form-status error';
+            status.textContent = 'Something went wrong sending your message. Please try again in a minute.';
+          });
+      });
+    })();
+  </script>
+
+  <footer class="footer">
+    <p style="color:var(--text-faint); font-size:12px; text-align:center;">© 2026 WheelerWorks Digital · Central Jersey · Built by Harrington Wheeler-Timmons</p>
+  </footer>
+
+</body>
+</html>
