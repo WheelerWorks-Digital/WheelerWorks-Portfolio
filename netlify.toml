@@ -1,0 +1,5 @@
+# Netlify settings: plain static site, no build step.
+# Netlify serves the repo root, with index.html as the homepage.
+[build]
+  publish = "."
+  command = ""
