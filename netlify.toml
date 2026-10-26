@@ -3,3 +3,49 @@
 [build]
   publish = "."
   command = ""
+
+# ─────────────────────────────────────────────────────────────────────────────
+# SECURITY HEADERS
+# Extra instructions sent with every page that tell the visitor's browser how
+# strictly to treat the site. They don't change how the site looks; they shut
+# doors attackers could use. Check them any time at https://securityheaders.com
+#
+# Already sent by Netlify automatically, so not repeated here:
+#   Strict-Transport-Security (HSTS) = "only ever load this site over HTTPS"
+# ─────────────────────────────────────────────────────────────────────────────
+[[headers]]
+  for = "/*"
+  [headers.values]
+    # Clickjacking protection: other websites can't load this site inside an
+    # invisible frame and trick people into clicking things. SAMEORIGIN (not
+    # DENY) because Resume.html shows the resume PDF in a frame from this site.
+    X-Frame-Options = "SAMEORIGIN"
+
+    # Stop the browser from "guessing" a file's type. Without it, a file served
+    # as text could be treated as a script.
+    X-Content-Type-Options = "nosniff"
+
+    # When someone clicks a link to another site, only send our domain name,
+    # not the full page address they came from.
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+    # Turn off powerful browser features this site never uses, so nothing
+    # injected into a page could use them either.
+    Permissions-Policy = "camera=(), microphone=(), geolocation=(), payment=(), usb=()"
+
+    # Content-Security-Policy (CSP): a whitelist of where the page may load
+    # things from. Anything not listed is blocked. One rule per line:
+    #   default-src 'self'          → by default, only files from this site
+    #   script-src 'self'           → scripts only from our own .js files (no inline <script>, which is
+    #                                 why the contact form script lives in js/contact.js)
+    #   style-src ...               → our CSS, Google Fonts' CSS, and inline style="" attributes
+    #   font-src fonts.gstatic.com  → the actual font files from Google Fonts
+    #   img-src 'self' data:        → images from this site (and tiny inline images)
+    #   connect-src formspree.io    → JavaScript may only send data to Formspree (the contact form)
+    #   form-action 'self' formspree.io → forms may only submit here or to Formspree
+    #   frame-src 'self'            → frames may only show our own files (the resume PDF)
+    #   frame-ancestors 'self'      → modern version of X-Frame-Options
+    #   object-src 'none'           → no old plugins like Flash
+    #   base-uri 'self'             → nobody can change where relative links point
+    #   upgrade-insecure-requests   → load any http:// resource over https://
+    Content-Security-Policy = "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src https://formspree.io; form-action 'self' https://formspree.io; frame-src 'self'; frame-ancestors 'self'; object-src 'none'; base-uri 'self'; upgrade-insecure-requests"
