@@ -1,24 +1,18 @@
-// Contact page: package pre-select + Formspree submit.
+// Contact page: Formspree submit.
 // Kept in its own file so the Content-Security-Policy can block inline scripts.
-
-// Pre-select the package when coming from the pricing page (Contact.html?package=business)
-(function () {
-  var pick = new URLSearchParams(location.search).get('package');
-  var map = { starter: 'Starter ($350)', business: 'Business ($750)', custom: 'Custom (from $1,200)' };
-  if (pick && map[pick]) document.getElementById('package').value = map[pick];
-})();
 
 // Send through Formspree without leaving the page, then show the thank-you message.
 // Without JavaScript the form still posts normally to Formspree.
 (function () {
   var form = document.getElementById('contact-form');
   var status = document.getElementById('form-status');
+  if (!form) return;
   form.addEventListener('submit', function (e) {
     e.preventDefault();
     status.className = 'full form-status';
     if (form.action.indexOf('YOUR_FORM_ID') !== -1) {
       status.className = 'full form-status error';
-      status.textContent = "The contact form isn't connected yet. Please check back soon.";
+      status.textContent = "The form isn't connected yet. Please check back soon.";
       return;
     }
     status.textContent = 'Sending…';

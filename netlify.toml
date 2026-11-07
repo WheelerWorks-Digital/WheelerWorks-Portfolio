@@ -4,6 +4,18 @@
   publish = "."
   command = ""
 
+# The Pricing page was removed (Nov 2026); pricing is discussed on a call.
+# Old links (and search results) go to the new page instead of a 404.
+[[redirects]]
+  from = "/Pricing.html"
+  to = "/Contact.html"
+  status = 301
+
+[[redirects]]
+  from = "/Pricing"
+  to = "/Contact.html"
+  status = 301
+
 # ─────────────────────────────────────────────────────────────────────────────
 # SECURITY HEADERS
 # Extra instructions sent with every page that tell the visitor's browser how
