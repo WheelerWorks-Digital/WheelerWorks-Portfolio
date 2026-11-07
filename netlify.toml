@@ -16,6 +16,11 @@
   to = "/Contact.html"
   status = 301
 
+[[redirects]]
+  from = "/pricing"
+  to = "/Contact.html"
+  status = 301
+
 # ─────────────────────────────────────────────────────────────────────────────
 # SECURITY HEADERS
 # Extra instructions sent with every page that tell the visitor's browser how
